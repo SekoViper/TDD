@@ -5,4 +5,10 @@ class Solver
 
     (1..num).reduce(:*)
   end
+
+  def reverse(word)
+    raise TypeError, 'Input must be a string' unless word.is_a?(String)
+
+    word.reverse
+  end
 end
