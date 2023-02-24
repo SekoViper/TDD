@@ -21,4 +21,19 @@ describe Solver do
       expect { solver.factorial('Umair') }.to raise_error(ArgumentError)
     end
   end
+  # TDD for reverse string method
+  context 'Reverse' do
+    it 'when given a string' do
+      expect(solver.reverse('Seko')).to eq('okeS')
+      expect(solver.reverse("world")).to eq("dlrow")
+      expect(solver.reverse("")).to eq("")
+    end
+  end
+  context 'When given a non-string Argument' do
+    it 'Return TypeError' do
+      expect { solver.reverse(nil) }.to raise_error(TypeError)
+      expect { solver.reverse(1) }.to raise_error(TypeError)
+      expect { solver.reverse([]) }.to raise_error(TypeError)
+    end
+  end
 end
